@@ -5,7 +5,7 @@ mkdir -p build prebuilt/downloads
 if [ ! -f prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz ]; then
 	cd prebuilt/downloads
 	wget https://github.com/korli/buildtools/releases/download/btrev43119/buildtools-x86_64-btrev43119-1.tar.gz
-	cd ..
+	cd ../..
 fi
 cd build
 tar xvf ../prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz
