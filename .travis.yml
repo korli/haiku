@@ -1,0 +1,10 @@
+language: generic
+script: ./build/scripts/travis_build
+
+sudo: required
+dist: trusty
+
+cache:
+    directories:
+    - prebuilt/downloads
+

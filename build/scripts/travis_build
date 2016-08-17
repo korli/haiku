@@ -1,0 +1,14 @@
+#!/bin/sh
+
+mkdir -p build prebuilt/downloads
+
+if [ ! -f prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz ]; then
+	cd prebuilt/downloads
+	wget https://github.com/korli/buildtools/releases/download/btrev43119/buildtools-x86_64-btrev43119-1.tar.gz
+	cd ..
+fi
+cd build
+tar xvf ../prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz
+../configure --use-gcc-pipe --cross-tools-prefix cross-tools-x86_64/bin/x86_64-unknown-haiku-
+cross-tools-x86_64/bin/jam -j2 -q @minimum-raw
+
