@@ -1,15 +1,18 @@
 #!/bin/sh
 
-mkdir -p build prebuilt/downloads
+mkdir -p generated prebuilt/downloads
+TOOLCHAIN=buildtools-x86_64-btrev43119-1.tar.gz
 
-if [ ! -f prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz ]; then
+if [ ! -f prebuilt/downloads/$TOOLCHAIN ]; then
+	echo "Downloading toolchain"
 	cd prebuilt/downloads
-	wget https://github.com/korli/buildtools/releases/download/btrev43119/buildtools-x86_64-btrev43119-1.tar.gz
+	wget https://github.com/korli/buildtools/releases/download/btrev43119/$TOOLCHAIN
 	cd ../..
 fi
-cd build
-tar xvf ../prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz
-export HAIKU_REVISION=$TRAVIS_COMMIT
+cd generated
+echo "Unpacking toolchain"
+tar xf ../prebuilt/downloads/$TOOLCHAIN
+echo "Building $TRAVIS_COMMIT"
 ../configure --use-gcc-pipe --cross-tools-prefix cross-tools-x86_64/bin/x86_64-unknown-haiku-
-cross-tools-x86_64/bin/jam -j2 -q @minimum-raw
+cross-tools-x86_64/bin/jam -j3 -q -sHAIKU_REVISION=hrev99999 @minimum-raw
 
