@@ -9,6 +9,7 @@ if [ ! -f prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz ]; then
 fi
 cd build
 tar xvf ../prebuilt/downloads/buildtools-x86_64-btrev43119-1.tar.gz
+export HAIKU_REVISION=$TRAVIS_COMMIT
 ../configure --use-gcc-pipe --cross-tools-prefix cross-tools-x86_64/bin/x86_64-unknown-haiku-
 cross-tools-x86_64/bin/jam -j2 -q @minimum-raw
 
