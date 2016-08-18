@@ -25,13 +25,12 @@ echo "{
         \"licenses\": [\"MIT\"],
         \"labels\": [\"Haiku\"],
         \"public_download_numbers\": false,
-        \"public_stats\": false,
-    }
+        \"public_stats\": false
+    },
     \"version\": {
         \"name\": \"hrev99999\",
         \"desc\": \"Fake version description\"
     },
-
     \"files\":
         [
         {\"includePattern\": \"generated/(haiku.*)\", \"uploadPattern\": \"$TRAVIS_COMMIT/$1\"}
