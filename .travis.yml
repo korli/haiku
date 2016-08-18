@@ -22,6 +22,6 @@ env:
 deploy:
   skip_cleanup: true
   - provider: script
-    script: /bin/sh ./build/scripts/deploy_to_ghpages.sh
+    script: ./build/scripts/deploy_to_ghpages
     on:
       branch: master
