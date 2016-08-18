@@ -13,6 +13,10 @@ cd generated
 echo "Unpacking toolchain"
 tar xf ../prebuilt/downloads/$TOOLCHAIN
 echo "Building $TRAVIS_COMMIT"
+export HAIKU_DOWNLOAD_DIR=../prebuilt/downloads/
 ../configure --use-gcc-pipe --cross-tools-prefix cross-tools-x86_64/bin/x86_64-unknown-haiku-
-cross-tools-x86_64/bin/jam -j3 -q -sHAIKU_REVISION=hrev99999 @minimum-raw
-
+if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then
+	cross-tools-x86_64/bin/jam -j3 -q -sHAIKU_REVISION=hrev99999 @release-raw
+else
+	cross-tools-x86_64/bin/jam -j3 -q -sHAIKU_REVISION=hrev99999 @release-raw build '<repository>Haiku'
+fi
