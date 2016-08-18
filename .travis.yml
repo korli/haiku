@@ -19,9 +19,16 @@ env:
     # BINTRAY-API-KEY
     - secure: kaH6bqSZ69ue3Ujp95Xlez9ValXly7kT004758ms/Jrdv9CJ9coNVjauEItDa/T2a9BKq/WVp6DOpEcLZhFg7h9aJVPOkFl4uU4OiEpcb6zmdmL2F0b0pG78kyFiGv8hXPX5jqBGwgSP2ITqRNMQGM7EHEExnZbs/FhGjmrWYeMwFpnX6+xASHyf+7PvbnR17u5DLHbhKp+h3fBZr88jfKmtVOxus0FDc3twDwa0gDzQx5D2lcHHC4IA62iqo7jZqdUOdFCv8y459gO3qtPAH2LBJlhS23++Iag0EBFI+/qAOVd29JYmqjaz7EDO55E6PkQghwYvfrT9TLi/7LL8TwIXp/xGv5Rix4dBPNye40yGH6KG6itpRplLHG/QvuoYkIXmjmpZk/y93HOONOEXfc7o4Pm3dTRDjzA7B7tqhKK8D2q4FGZySJXU01xvLsTcXpVkd3pilO2dqI3cPadZ3am8PYglILNJvjAZkQ3ypF6Xec8k+VyGXzARzEr1HbXU9leQREpF7Q5f7t6YQViiVWkHjCB1XxHVsKigG2SEaI3hcewknI32cgjwL4+gCHi/VSCjG7B7aOly+9jiFluZN5BU4QG12AVQLixS/5PWmZOZv5V4kZsnMSQPFzamcDFAMHk2Kd2QH/0iVcMCVUXdTVIZCVZPiVK1bFrK1jGIBCQ=
   
+before_deploy: ./build/scripts/generate_bintray_descriptor
+
 deploy:
   skip_cleanup: true
   - provider: script
     script: ./build/scripts/deploy_to_ghpages
     on:
       branch: master
+  - provider: bintray
+    file: ./generated/bintray.json
+    user: korli
+    key: $BINTRAY-API-KEY
+
