@@ -22,13 +22,14 @@ env:
 before_deploy: ./build/scripts/generate_bintray_descriptor
 
 deploy:
-  skip_cleanup: true
   - provider: script
     script: ./build/scripts/deploy_to_ghpages
     on:
       branch: master
+    skip_cleanup: true
   - provider: bintray
     file: ./generated/bintray.json
     user: korli
     key: $BINTRAY-API-KEY
+    skip_cleanup: true
 
