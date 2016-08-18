@@ -16,10 +16,12 @@ env:
   global:
     # GITHUB_TOKEN
     - secure: mH557eyg2SqDZJS+Bb+rbQ4a+rQ/3ckozNCt1bHCOOjNIZQDHSZdxbUCiT5GV0PUaS7fjSsyYkp53rdFpmuNyyFtIlPmHnEf58/IMoF0wuf4von+XFq7NCl+xxnwOrWye3W71itexdcucGOAl6mR0LqVCb9WYYAf0mrjIDWVOI05b8l++MBY6pr8GhzdwQEtndv7IrRTjf9ujX0RKDsoE9i7Q6bnm07KEpieDTZVcOfIqC/NW4IKbfdVyQj+iAlDRoXFaWTgjbU+Hwk8UlVwgZZf4dbAelhStGKP7kWN+MseJbq+zEE/QeHzJfwAMz4nHrKg6h+cjvc5HW/hgCQc6YZXTHR79tVfKdIw6Bw8i1iMGDB0vBcavSlJGRevUvegvXSFcHVQhggcfayLnpbBP21MnIeIZxD5stosbOjQZZYVLh/IyB6bZCWnoRFD15B5kMmERBHjrVT/mBJAbptVgXVQvH1THFNUORQD00VxzymMY8zinzaZqDSy6sZSlNXb/QpSPBTtG3XqITOVyM8e8x6Y3jMqvl1FPB9uQJT12FUn+PLgPW8PRVWjh++6gE9/wu5H1PK7g6d9Q5N1HWsDZQj5/XKcvVPFd9uAcaaCWg/nwgKaZARyuuSE2zj4JS9U/S/KiJLb3TH5vXSV1GXGQbXEhLanHCKvwLU2ko9hfPg=
+    # BINTRAY-API-KEY
+    - secure: kaH6bqSZ69ue3Ujp95Xlez9ValXly7kT004758ms/Jrdv9CJ9coNVjauEItDa/T2a9BKq/WVp6DOpEcLZhFg7h9aJVPOkFl4uU4OiEpcb6zmdmL2F0b0pG78kyFiGv8hXPX5jqBGwgSP2ITqRNMQGM7EHEExnZbs/FhGjmrWYeMwFpnX6+xASHyf+7PvbnR17u5DLHbhKp+h3fBZr88jfKmtVOxus0FDc3twDwa0gDzQx5D2lcHHC4IA62iqo7jZqdUOdFCv8y459gO3qtPAH2LBJlhS23++Iag0EBFI+/qAOVd29JYmqjaz7EDO55E6PkQghwYvfrT9TLi/7LL8TwIXp/xGv5Rix4dBPNye40yGH6KG6itpRplLHG/QvuoYkIXmjmpZk/y93HOONOEXfc7o4Pm3dTRDjzA7B7tqhKK8D2q4FGZySJXU01xvLsTcXpVkd3pilO2dqI3cPadZ3am8PYglILNJvjAZkQ3ypF6Xec8k+VyGXzARzEr1HbXU9leQREpF7Q5f7t6YQViiVWkHjCB1XxHVsKigG2SEaI3hcewknI32cgjwL4+gCHi/VSCjG7B7aOly+9jiFluZN5BU4QG12AVQLixS/5PWmZOZv5V4kZsnMSQPFzamcDFAMHk2Kd2QH/0iVcMCVUXdTVIZCVZPiVK1bFrK1jGIBCQ=
   
 deploy:
   skip_cleanup: true
-  provider: script
-  script: /bin/sh ./build/scripts/deploy_to_ghpages.sh
-  on:
-    branch: master
+  - provider: script
+    script: /bin/sh ./build/scripts/deploy_to_ghpages.sh
+    on:
+      branch: master
