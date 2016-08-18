@@ -1,5 +1,7 @@
 #!/bin/sh -vx
 
+targetArch=x86_64
+
 if [ -n "$GITHUB_TOKEN" ]; then
   cd generated/objects/haiku/$targetArch/packaging/repositories/Haiku && \
   git init && \
