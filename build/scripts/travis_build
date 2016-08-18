@@ -20,3 +20,4 @@ if [ "$TRAVIS_PULL_REQUEST" = "true" ]; then
 else
 	cross-tools-x86_64/bin/jam -j3 -q -sHAIKU_REVISION=hrev99999 @release-raw build '<repository>Haiku'
 fi
+cd ..
