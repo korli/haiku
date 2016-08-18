@@ -12,3 +12,14 @@ cache:
     directories:
     - prebuilt/downloads
 
+env:
+  global:
+    # GITHUB_TOKEN
+    - secure: mH557eyg2SqDZJS+Bb+rbQ4a+rQ/3ckozNCt1bHCOOjNIZQDHSZdxbUCiT5GV0PUaS7fjSsyYkp53rdFpmuNyyFtIlPmHnEf58/IMoF0wuf4von+XFq7NCl+xxnwOrWye3W71itexdcucGOAl6mR0LqVCb9WYYAf0mrjIDWVOI05b8l++MBY6pr8GhzdwQEtndv7IrRTjf9ujX0RKDsoE9i7Q6bnm07KEpieDTZVcOfIqC/NW4IKbfdVyQj+iAlDRoXFaWTgjbU+Hwk8UlVwgZZf4dbAelhStGKP7kWN+MseJbq+zEE/QeHzJfwAMz4nHrKg6h+cjvc5HW/hgCQc6YZXTHR79tVfKdIw6Bw8i1iMGDB0vBcavSlJGRevUvegvXSFcHVQhggcfayLnpbBP21MnIeIZxD5stosbOjQZZYVLh/IyB6bZCWnoRFD15B5kMmERBHjrVT/mBJAbptVgXVQvH1THFNUORQD00VxzymMY8zinzaZqDSy6sZSlNXb/QpSPBTtG3XqITOVyM8e8x6Y3jMqvl1FPB9uQJT12FUn+PLgPW8PRVWjh++6gE9/wu5H1PK7g6d9Q5N1HWsDZQj5/XKcvVPFd9uAcaaCWg/nwgKaZARyuuSE2zj4JS9U/S/KiJLb3TH5vXSV1GXGQbXEhLanHCKvwLU2ko9hfPg=
+  
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: build/scripts/deploy_to_ghpages.sh
+  on:
+    branch: master
