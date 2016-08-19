@@ -1,0 +1,6 @@
+name Haiku
+vendor "Haiku Project"
+summary "The Haiku repository (for Haiku r1~alpha4_pm_hrev20160819)"
+priority 1
+url http://packages.haiku-os.org/haiku/master/x86_64/r1~alpha4_pm_hrev20160819
+architecture x86_64
