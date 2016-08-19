@@ -3,6 +3,7 @@
 targetArch=x86_64
 
 if [ -n "$GITHUB_TOKEN" ]; then
+  mv generated/haiku* generated/objects/haiku/$targetArch/packaging/repositories/Haiku/ && \
   cd generated/objects/haiku/$targetArch/packaging/repositories/Haiku && \
   git init && \
   git config --global user.name "Travis CI" && \
