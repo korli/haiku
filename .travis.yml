@@ -25,3 +25,9 @@ deploy:
     on:
       branch: master
     skip_cleanup: true
+  - provider: releases
+    api_key: ${GITHUB_TOKEN}
+    file: generated/haiku-nightly.image.xz
+    on:
+      tags: true
+    skip_cleanup: true
