@@ -4,24 +4,14 @@ targetArch=x86_64
 
 if [ -n "${BINTRAY-API-KEY}" ]; then
 
-PCK_NAME="haiku.images"
-DESCRIPTION="Images built by Travis CI"
-BINTRAY_USER="korli"
-BINTRAY_API_KEY="$BINTRAY_API_KEY" # env
-BINTRAY_REPO="haiku_images"
-WEBSITE_URL="https://github.com/korli/haiku"
-ISSUE_TRACKER_URL="https://github.com/korli/haiku/issues"
-VCS_URL="https://github.com/korli/haiku.git"
-
 echo "{
     \"package\": { 
-        \"name\": \"${PCK_NAME}\",
-    	\"repo\": \"${BINTRAY_REPO}\",
-        \"desc\": \"${DESCRIPTION}\",
-        \"desc_url\": \"auto\",
-        \"website_url\": [\"${WEBSITE_URL}\"],
-        \"vcs_url\": [\"${VCS_URL}\"],
-        \"issue_tracker_url\": [\"${ISSUE_TRACKER_URL}\"],
+        \"name\": \"haiku.images\",
+        \"repo\": \"haiku_images\",
+        \"subject\": "korli"
+        \"website_url\": [\"https://github.com/korli/haiku\"],
+        \"vcs_url\": [\"https://github.com/korli/haiku.git\"],
+        \"issue_tracker_url\": [\"https://github.com/korli/haiku/issues\"],
         \"licenses\": [\"MIT\"],
         \"labels\": [\"Haiku\"],
         \"public_download_numbers\": false,
