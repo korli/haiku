@@ -2,23 +2,22 @@
 
 targetArch=x86_64
 
-if [ -n "${BINTRAY-API-KEY}" ]; then
-
-echo "{
-    \"package\": { 
-        \"name\": \"haiku.images\",
-        \"repo\": \"haiku_images\",
-        \"subject\": \"korli\"
+cat > generated/bintray.json << EOF
+{
+    "package": { 
+        "name": "haiku.images",
+        "repo": "haiku_images",
+        "subject": "korli"
     },
-    \"version\": {
-        \"name\": \"hrev99999\",
-        \"released\": \"2016-08-19\"
+    "version": {
+        "name": "hrev99999",
+        "released": "$(date --iso-8601=seconds)"
     },
-    \"files\":
+    "files":
         [
-        {\"includePattern\": \"generated/(haiku.*)\", \"uploadPattern\": \"$TRAVIS_COMMIT/$1\"}
+        {"includePattern": "generated/(haiku.*)", "uploadPattern": "$TRAVIS_COMMIT/$targetArch/\$1"}
         ],
-    \"publish\": true
-}" > generated/bintray.json
+    "publish": true
+}
+EOF
 
-fi
