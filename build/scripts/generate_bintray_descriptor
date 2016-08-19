@@ -4,7 +4,7 @@ targetArch=x86_64
 
 if [ -n "${BINTRAY-API-KEY}" ]; then
 
-PCK_NAME="Haiku Images"
+PCK_NAME="haiku.images"
 DESCRIPTION="Images built by Travis CI"
 BINTRAY_USER="korli"
 BINTRAY_API_KEY="$BINTRAY_API_KEY" # env
