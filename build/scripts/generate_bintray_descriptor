@@ -25,4 +25,6 @@ echo "generated descriptor:"
 cat generated/bintray.json
 echo "list of files to be uploaded:"
 ls -l generated/haiku*
+xz generated/haiku*
+ls -l generated/haiku*
 echo "done"
