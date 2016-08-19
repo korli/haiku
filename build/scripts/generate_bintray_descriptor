@@ -8,18 +8,11 @@ echo "{
     \"package\": { 
         \"name\": \"haiku.images\",
         \"repo\": \"haiku_images\",
-        \"subject\": "korli"
-        \"website_url\": [\"https://github.com/korli/haiku\"],
-        \"vcs_url\": [\"https://github.com/korli/haiku.git\"],
-        \"issue_tracker_url\": [\"https://github.com/korli/haiku/issues\"],
-        \"licenses\": [\"MIT\"],
-        \"labels\": [\"Haiku\"],
-        \"public_download_numbers\": false,
-        \"public_stats\": false
+        \"subject\": \"korli\"
     },
     \"version\": {
         \"name\": \"hrev99999\",
-        \"desc\": \"Fake version description\"
+        \"released\": \"2016-08-19\"
     },
     \"files\":
         [
